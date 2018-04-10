@@ -1,0 +1,5 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_DB=gis
+POSTGRES_USER=docker
+POSTGRES_PASSWORD=docker
