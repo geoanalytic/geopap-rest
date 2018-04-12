@@ -1,0 +1,49 @@
+{
+"name": "Clearwater Trails",
+"description": "Motorized trails",
+"creationdate": "2017-07-24 14:16:28",
+"modifieddate": "2018-01-24 13:00:00",
+"color": "#FBC02D",
+"active": false,
+"sdcardPath": "MAINSTORAGE",
+"mapView": "52.02025604248047,-115.70208740234375,10.0",
+"project": {
+"path": "Trails/trails.gpap",
+"modifieddate": "2018-01-24 13:00:00",
+"url": "http://webmap.geoanalytic.com/download/Trails/trails.gpap",
+"uploadurl": "http://webmap.geoanalytic.com/download/Trails/trails.gpap"
+},
+"tags": {
+"path": "Trails/tags.json",
+"modifieddate": "2018-01-24 13:00:00",
+"url": "http://webmap.geoanalytic.com/download/Trails/tags.json"
+},
+"basemaps": [
+{
+"path": "Trails/alberta_oam.map",
+"modifieddate": "2018-01-24 13:00:00",
+"url": "http://webmap.geoanalytic.com/download/Trails/Alberta_oam.map",
+"size": "285574242"
+}
+],
+"spatialitedbs": [
+{
+"path": "Trails/rigstreet_v1.sqlite",
+"modifieddate": "2018-01-24 13:00:00",
+"url": "http://webmap.geoanalytic.com/download/Trails/rigstreet_v1.sqlite",
+"size": "5709824",
+"uploadurl": "http://webmap.geoanalytic.com/download/Trails/rigstreet_v1.sqlite",
+"visible": [
+"sites_camp",
+"atv_trails"
+]
+}
+],
+"otherfiles": [
+{
+"path": "Trails/SampleSurvey.pdf",
+"modifieddate": "2018-01-24 13:00:00",
+"url": "http://webmap.geoanalytic.com/download/Trails/SampleSurvey.pdf"
+}
+]
+}
