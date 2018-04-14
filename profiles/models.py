@@ -7,7 +7,6 @@ class Project(models.Model):
     modifieddate = models.DateTimeField(auto_now_add=True)    
     url = models.URLField(blank=True)
     uploadurl = models.URLField(blank=True)
-    profile = models.ForeignKey("Profile", on_delete = models.SET_NULL, blank=True, null=True)
 
     def __str__(self):
         return self.path    
@@ -29,7 +28,7 @@ class Basemap(models.Model):
     def __str__(self):
         return self.path
 
-class Spatialdbs(models.Model):
+class Spatialitedbs(models.Model):
     path = models.CharField(max_length=100, blank=True, default='')    
     modifieddate = models.DateTimeField(auto_now_add=True) 
     url = models.URLField(blank=True)
@@ -57,9 +56,10 @@ class Profile(models.Model):
     active = models.BooleanField(default=False)
     sdcardPath = models.CharField(max_length=100, default="MAINSTORAGE")
     mapView = models.CharField(max_length=100, default="52.02025604248047,-115.70208740234375,10.0")
+    projects = models.ForeignKey(Project, on_delete = models.SET_NULL, blank=True, null=True)    
     tags = models.ForeignKey(Tag, on_delete = models.SET_NULL, blank=True, null=True)
     basemaps = models.ManyToManyField(Basemap, blank=True)
-    spatialdbs = models.ManyToManyField(Spatialdbs, blank=True)
+    spatialitedbs = models.ManyToManyField(Spatialitedbs, blank=True)
     otherfiles = models.ManyToManyField(Otherfiles, blank=True)
 
     def __str__(self):
@@ -69,7 +69,7 @@ class Profile(models.Model):
         ordering = ('modifieddate', 'name', )
 
 class ProfileSet(models.Model):
-    owner = models.ForeignKey('users.user', related_name='profilesets', on_delete=models.CASCADE)
+    owner = models.OneToOneField('users.user', related_name='profilesets', on_delete=models.CASCADE)
     profiles = models.ManyToManyField(Profile, blank=True)
     formatVersion = models.FloatField(default=1.1)
 
