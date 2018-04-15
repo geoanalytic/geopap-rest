@@ -56,7 +56,7 @@ class Profile(models.Model):
     active = models.BooleanField(default=False)
     sdcardPath = models.CharField(max_length=100, default="MAINSTORAGE")
     mapView = models.CharField(max_length=100, default="52.02025604248047,-115.70208740234375,10.0")
-    projects = models.ForeignKey(Project, on_delete = models.SET_NULL, blank=True, null=True)    
+    project = models.ForeignKey(Project, on_delete = models.SET_NULL, blank=True, null=True)    
     tags = models.ForeignKey(Tag, on_delete = models.SET_NULL, blank=True, null=True)
     basemaps = models.ManyToManyField(Basemap, blank=True)
     spatialitedbs = models.ManyToManyField(Spatialitedbs, blank=True)
